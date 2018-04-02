@@ -31,6 +31,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 print(textoRespuesta)
                 self.arTitles =  json.arrayValue.map({$0["title"].stringValue})
                 self.arBodies =  json.arrayValue.map({$0["body"].stringValue})
+               
                 DispatchQueue.main.async{
                     self.tableView.reloadData()
                 }
@@ -61,6 +62,51 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
+    {
+        // 1
+        let shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "⤴ \n Share" , handler: { (action:UITableViewRowAction, indexPath: IndexPath) -> Void in
+            // 2
+            let shareMenu = UIAlertController(title: nil, message: "Share using", preferredStyle: .actionSheet)
+            
+            let twitterAction = UIAlertAction(title: "Twitter", style: UIAlertActionStyle.default, handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
+            
+            shareMenu.addAction(twitterAction)
+            shareMenu.addAction(cancelAction)
+            
+            self.present(shareMenu, animated: true, completion: nil)
+        })
+        shareAction.backgroundColor = UIColor.blue
+
+        // 3
+        let favAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "★ \n Favorite" , handler: { (action:UITableViewRowAction, indexPath:IndexPath) -> Void in
+            // 4
+            let rateMenu = UIAlertController(title: nil, message: "Rate this App", preferredStyle: .actionSheet)
+            
+            let appRateAction = UIAlertAction(title: "Rate", style: UIAlertActionStyle.default, handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
+            
+            rateMenu.addAction(appRateAction)
+            rateMenu.addAction(cancelAction)
+            
+            self.present(rateMenu, animated: true, completion: nil)
+        })
+        favAction.backgroundColor = UIColor.init(red: 0/255, green: 128/255, blue: 97/255, alpha: 1)
+        // 5
+        return [shareAction,favAction]
+    }
+
+    //voy  ausar un enfoque más suavesongo... intentaré, pero dejo este código acá por si no puedo.
+//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        let favAction = self.contextualFavAction(forRowAtIndexPath: indexPath)
+//        //let flagAction = self.contextualToggleFlagAction(forRowAtIndexPath: indexPath)
+//        let swipeConfig = UISwipeActionsConfiguration(actions: [favAction])
+//        return swipeConfig
+//    }
+    
+    
 
 
 }
