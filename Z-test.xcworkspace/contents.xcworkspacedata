@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Z-test.xcodeproj">
+      location = "group:/Users/troquer/Documents/ios/Zemoga/Z-test/Showcase.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

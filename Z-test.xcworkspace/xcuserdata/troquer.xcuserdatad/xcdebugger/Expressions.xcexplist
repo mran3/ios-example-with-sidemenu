@@ -3,7 +3,32 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "closure #1 in closure #2 in ViewController.tableView(_:editActionsForRowAt:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tableView.indexPathForSelectedRow">
+            </PersistentString>
+            <PersistentString
+               value = "self.arBodies">
+            </PersistentString>
+            <PersistentString
+               value = "self.arBodies[(tableView.indexPathForSelectedRow?.row)!]">
+            </PersistentString>
+            <PersistentString
+               value = "self.arBodies[indexPath.row]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ViewController.prepare(for : UIStoryboardSegue, sender : Any?) -&gt; ():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "arBodies[(tableView.indexPathForSelectedRow?.row)!]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.prepare(for:sender:):ViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "arBodies[(tableView.indexPathForSelectedRow?.row)!]">

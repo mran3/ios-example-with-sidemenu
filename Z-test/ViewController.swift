@@ -28,7 +28,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             do{
                 let json = try JSON(data: data)
                 let textoRespuesta = String(data: data, encoding: String.Encoding.utf8)
-                print(textoRespuesta)
+                //print(textoRespuesta)
                 self.arTitles =  json.arrayValue.map({$0["title"].stringValue})
                 self.arBodies =  json.arrayValue.map({$0["body"].stringValue})
                
@@ -48,7 +48,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        let currentCell = tableView.cellForRow(at: tableView.indexPathForSelectedRow!)!
         
         //destination?.detailLabel?.text = arBodies[(tableView.indexPathForSelectedRow?.row)!]
-        destination?.receivedTitle = arBodies[(tableView.indexPathForSelectedRow?.row)!]
+        destination?.receivedBody = arBodies[(tableView.indexPathForSelectedRow?.row)!]
     }
 
     
@@ -83,9 +83,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // 3
         let favAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "★ \n Favorite" , handler: { (action:UITableViewRowAction, indexPath:IndexPath) -> Void in
             // 4
-            let rateMenu = UIAlertController(title: nil, message: "Rate this App", preferredStyle: .actionSheet)
+            let rateMenu = UIAlertController(title: nil, message: "Fav this Post", preferredStyle: .actionSheet)
             
-            let appRateAction = UIAlertAction(title: "Rate", style: UIAlertActionStyle.default, handler: nil)
+            let appRateAction = UIAlertAction(title: "Fav", style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction!) in
+                    let title = self.arTitles[indexPath.row]
+                    let body = self.arBodies[indexPath.row]//[(tableView.indexPathForSelectedRow?.row)!]
+                    PersistanceHelper.savePost(title: title, content: body)
+                }
+            )
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
             
             rateMenu.addAction(appRateAction)
