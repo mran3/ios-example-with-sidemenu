@@ -1,12 +1,15 @@
 PODS:
+  - SideMenu (3.1.4)
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
+  - SideMenu
   - SwiftyJSON
 
 SPEC CHECKSUMS:
+  SideMenu: 99021e70b3f2eee65b5dd88e4274d09031b1221e
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 0b05203d19819ca8badc5d431ddc1fbfa508f1c2
+PODFILE CHECKSUM: 43eecd63aa1113ab93eb305ad4c45ceb9125a8c7
 
 COCOAPODS: 1.2.0

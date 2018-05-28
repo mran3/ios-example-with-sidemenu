@@ -8,6 +8,8 @@
 
 import UIKit
 import SwiftyJSON
+import SideMenu
+
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -21,13 +23,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        SideMenuManager.default.menuFadeStatusBar = false
         
         let postsService = PostsService()
-        postsService.getPosts(onSuccess: {
-            (data) in
+        postsService.getPosts() {(data) in
             do{
                 let json = try JSON(data: data)
-                let textoRespuesta = String(data: data, encoding: String.Encoding.utf8)
+                //let textoRespuesta = String(data: data, encoding: String.Encoding.utf8)
                 //print(textoRespuesta)
                 self.arTitles =  json.arrayValue.map({$0["title"].stringValue})
                 self.arBodies =  json.arrayValue.map({$0["body"].stringValue})
@@ -37,17 +39,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 }
                 
             } catch {
-                print("No pude procesar convertir json en arreglo")
+                print("Was not able to convert JSON into array.")
             }
-        })
+        }
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("voy pa ya")
         let destination = segue.destination as? DetailViewController
-//        let currentCell = tableView.cellForRow(at: tableView.indexPathForSelectedRow!)!
-        
-        //destination?.detailLabel?.text = arBodies[(tableView.indexPathForSelectedRow?.row)!]
         destination?.receivedBody = arBodies[(tableView.indexPathForSelectedRow?.row)!]
     }
 
@@ -102,16 +102,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // 5
         return [shareAction,favAction]
     }
-
-    //voy  ausar un enfoque más suavesongo... intentaré, pero dejo este código acá por si no puedo.
-//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//        let favAction = self.contextualFavAction(forRowAtIndexPath: indexPath)
-//        //let flagAction = self.contextualToggleFlagAction(forRowAtIndexPath: indexPath)
-//        let swipeConfig = UISwipeActionsConfiguration(actions: [favAction])
-//        return swipeConfig
-//    }
-    
-    
 
 
 }

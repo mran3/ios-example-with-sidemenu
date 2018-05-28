@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          error conditions that could cause the creation of the store to fail.
          */
         let container = NSPersistentContainer(name: "Z-test")
-        print(container.persistentStoreDescriptions.first?.url) //To get the .sqlite DB for debugging.
+        print(container.persistentStoreDescriptions.first?.url ?? "URL of SQLite Database") //To get the .sqlite DB for debugging.
 
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {

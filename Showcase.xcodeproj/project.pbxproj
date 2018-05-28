@@ -19,6 +19,7 @@
 		0CCCBFEA200C685C00142708 /* NetworkUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCCBFE9200C685C00142708 /* NetworkUtilities.swift */; };
 		0CCCBFEC200C689C00142708 /* PostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCCBFEB200C689C00142708 /* PostsService.swift */; };
 		9239201C75F0482C9689D465 /* Pods_Z_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1663D6EB222C3C1B08DC74BF /* Pods_Z_test.framework */; };
+		C16203CDCFA20572C3E0469D /* Pods_Showcase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1CEF05A254C6E8C9FF66A85 /* Pods_Showcase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +37,10 @@
 		0CCCBFE9200C685C00142708 /* NetworkUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkUtilities.swift; path = "../../../rest-app/Listado Rest/NetworkUtilities.swift"; sourceTree = "<group>"; };
 		0CCCBFEB200C689C00142708 /* PostsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsService.swift; path = "../../../rest-app/Listado Rest/Listado Rest/PostsService.swift"; sourceTree = "<group>"; };
 		1663D6EB222C3C1B08DC74BF /* Pods_Z_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Z_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66B7C2B6712C4C4C7D4C3BBF /* Pods-Showcase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase.release.xcconfig"; path = "Pods/Target Support Files/Pods-Showcase/Pods-Showcase.release.xcconfig"; sourceTree = "<group>"; };
 		8BFC8E4CD4E97D2E0685F3A0 /* Pods-Z-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Z-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-Z-test/Pods-Z-test.release.xcconfig"; sourceTree = "<group>"; };
+		A1CEF05A254C6E8C9FF66A85 /* Pods_Showcase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Showcase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A736DF0506A1F6EAA83EC4BE /* Pods-Showcase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showcase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Showcase/Pods-Showcase.debug.xcconfig"; sourceTree = "<group>"; };
 		BEB27D4AFD7EDC782DA81AA1 /* Pods-Z-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Z-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Z-test/Pods-Z-test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -46,6 +50,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9239201C75F0482C9689D465 /* Pods_Z_test.framework in Frameworks */,
+				C16203CDCFA20572C3E0469D /* Pods_Showcase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				1663D6EB222C3C1B08DC74BF /* Pods_Z_test.framework */,
+				A1CEF05A254C6E8C9FF66A85 /* Pods_Showcase.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,6 +116,8 @@
 			children = (
 				BEB27D4AFD7EDC782DA81AA1 /* Pods-Z-test.debug.xcconfig */,
 				8BFC8E4CD4E97D2E0685F3A0 /* Pods-Z-test.release.xcconfig */,
+				A736DF0506A1F6EAA83EC4BE /* Pods-Showcase.debug.xcconfig */,
+				66B7C2B6712C4C4C7D4C3BBF /* Pods-Showcase.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -150,6 +158,7 @@
 					0CCCBFD3200C67C400142708 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = VAL6A7M5FF;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -199,7 +208,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Z-test/Pods-Z-test-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Showcase/Pods-Showcase-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8B91148BFC22BF14CA42DCAA /* [CP] Check Pods Manifest.lock */ = {
@@ -229,7 +238,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Z-test/Pods-Z-test-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Showcase/Pods-Showcase-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -382,7 +391,7 @@
 		};
 		0CCCBFE7200C67C400142708 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BEB27D4AFD7EDC782DA81AA1 /* Pods-Z-test.debug.xcconfig */;
+			baseConfigurationReference = A736DF0506A1F6EAA83EC4BE /* Pods-Showcase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VAL6A7M5FF;
@@ -391,14 +400,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "aac.Z-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		0CCCBFE8200C67C400142708 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8BFC8E4CD4E97D2E0685F3A0 /* Pods-Z-test.release.xcconfig */;
+			baseConfigurationReference = 66B7C2B6712C4C4C7D4C3BBF /* Pods-Showcase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VAL6A7M5FF;
@@ -407,7 +417,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "aac.Z-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

@@ -10,7 +10,3 @@
 #endif
 #endif
 
-
-FOUNDATION_EXPORT double Pods_Z_testVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Z_testVersionString[];
-
