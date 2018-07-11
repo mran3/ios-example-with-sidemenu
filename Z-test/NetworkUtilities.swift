@@ -40,7 +40,7 @@ class NetworkUtilities {
 
     
     
-    /// Hace una petición HTTP.
+    /// Makes HTTP Request.
     ///
     /// - Parameters:
     ///   - endpoint: endpoint
