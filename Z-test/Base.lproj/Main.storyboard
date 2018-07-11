@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="DYi-k5-XIG" kind="relationship" relationship="rootViewController" id="obz-qS-WKg"/>
+                        <segue destination="DYi-k5-XIG" kind="relationship" relationship="rootViewController" id="N3y-8d-waY"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36m-dU-ynH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -85,7 +85,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="NO"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="AAT-xf-kAt"/>
@@ -125,7 +125,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detailed Info" id="H3i-b6-3XQ">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="jG9-CI-QfJ">
+                        <barButtonItem key="rightBarButtonItem" title="Menu" id="jG9-CI-QfJ">
                             <connections>
                                 <segue destination="kRk-dz-3Bp" kind="presentation" id="wZ2-c4-DPM"/>
                             </connections>
@@ -141,7 +141,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="AAT-xf-kAt"/>
-        <segue reference="dqH-qw-ikF"/>
+        <segue reference="N3y-8d-waY"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -24,6 +24,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.tableView.dataSource = self
         self.tableView.delegate = self
         SideMenuManager.default.menuFadeStatusBar = false
+        SideMenuManager.default.menuPresentingViewControllerUserInteractionEnabled = true
         
         let postsService = PostsService()
         postsService.getPosts() {(data) in
@@ -34,9 +35,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 self.arTitles =  json.arrayValue.map({$0["title"].stringValue})
                 self.arBodies =  json.arrayValue.map({$0["body"].stringValue})
                
-                DispatchQueue.main.async{
-                    self.tableView.reloadData()
-                }
+                DispatchQueue.main.async{ self.tableView.reloadData() }
                 
             } catch {
                 print("Was not able to convert JSON into array.")
@@ -63,45 +62,37 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
-    {
-        // 1
-        let shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "⤴ \n Share" , handler: { (action:UITableViewRowAction, indexPath: IndexPath) -> Void in
-            // 2
-            let shareMenu = UIAlertController(title: nil, message: "Share using", preferredStyle: .actionSheet)
-            
-            let twitterAction = UIAlertAction(title: "Twitter", style: UIAlertActionStyle.default, handler: nil)
-            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
-            
-            shareMenu.addAction(twitterAction)
-            shareMenu.addAction(cancelAction)
-            
-            self.present(shareMenu, animated: true, completion: nil)
-        })
-        shareAction.backgroundColor = UIColor.blue
-
-        // 3
-        let favAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "★ \n Favorite" , handler: { (action:UITableViewRowAction, indexPath:IndexPath) -> Void in
-            // 4
-            let rateMenu = UIAlertController(title: nil, message: "Fav this Post", preferredStyle: .actionSheet)
-            
-            let appRateAction = UIAlertAction(title: "Fav", style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction!) in
-                    let title = self.arTitles[indexPath.row]
-                    let body = self.arBodies[indexPath.row]//[(tableView.indexPathForSelectedRow?.row)!]
-                    PersistanceHelper.savePost(title: title, content: body)
-                }
-            )
-            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
-            
-            rateMenu.addAction(appRateAction)
-            rateMenu.addAction(cancelAction)
-            
-            self.present(rateMenu, animated: true, completion: nil)
-        })
-        favAction.backgroundColor = UIColor.init(red: 0/255, green: 128/255, blue: 97/255, alpha: 1)
-        // 5
-        return [shareAction,favAction]
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            // handle delete (by removing the data from your array and updating the tableview)
+        }
+    }
+    
+//    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
+//    {
+//        let favAction = UITableViewRowAction(style: .destructive, title: "★ \n Favorite"){ (action:UITableViewRowAction, indexPath:IndexPath) -> Void in
+//     
+//            let favMenu = UIAlertController(title: nil, message: "Fav this Post", preferredStyle: .actionSheet)
+//            let appRateAction = UIAlertAction(title: "Fav", style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction!) in
+//                    let title = self.arTitles[indexPath.row]
+//                    let body = self.arBodies[indexPath.row]
+//                    PersistanceHelper.savePost(title: title, content: body)
+//                }
+//            )
+//            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
+//            
+//            favMenu.addAction(appRateAction)
+//            favMenu.addAction(cancelAction)
+//            self.present(favMenu, animated: true, completion: nil)
+//        }
+//        favAction.backgroundColor = UIColor.init(red: 0/255, green: 128/255, blue: 97/255, alpha: 1)
+//        
+//        return [favAction]
+//    }
 
 
 }
