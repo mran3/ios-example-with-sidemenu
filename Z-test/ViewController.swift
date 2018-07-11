@@ -72,27 +72,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-//    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
-//    {
-//        let favAction = UITableViewRowAction(style: .destructive, title: "★ \n Favorite"){ (action:UITableViewRowAction, indexPath:IndexPath) -> Void in
-//     
-//            let favMenu = UIAlertController(title: nil, message: "Fav this Post", preferredStyle: .actionSheet)
-//            let appRateAction = UIAlertAction(title: "Fav", style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction!) in
-//                    let title = self.arTitles[indexPath.row]
-//                    let body = self.arBodies[indexPath.row]
-//                    PersistanceHelper.savePost(title: title, content: body)
-//                }
-//            )
-//            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
-//            
-//            favMenu.addAction(appRateAction)
-//            favMenu.addAction(cancelAction)
-//            self.present(favMenu, animated: true, completion: nil)
-//        }
-//        favAction.backgroundColor = UIColor.init(red: 0/255, green: 128/255, blue: 97/255, alpha: 1)
-//        
-//        return [favAction]
-//    }
 
 
 }
