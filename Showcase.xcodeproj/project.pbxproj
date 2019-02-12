@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C1A88DF22128BBB00ECB268 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A88DE22128BBB00ECB268 /* PostCell.swift */; };
 		0C2416E12071B0C6009AE18C /* Z-test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C2416DF2071B0C6009AE18C /* Z-test.xcdatamodeld */; };
 		0C2416E42071E0BE009AE18C /* PersistanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2416E32071E0BE009AE18C /* PersistanceHelper.swift */; };
 		0C5695BD20F6C17800529990 /* PostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5695BC20F6C17800529990 /* PostsService.swift */; };
@@ -18,9 +19,11 @@
 		0CCCBFDF200C67C400142708 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CCCBFDE200C67C400142708 /* Assets.xcassets */; };
 		0CCCBFE2200C67C400142708 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CCCBFE0200C67C400142708 /* LaunchScreen.storyboard */; };
 		0CE073B920F6D0B300823EE5 /* NetworkUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE073B820F6D0B300823EE5 /* NetworkUtilities.swift */; };
+		6E1A0795BC8D07D18494D5D5 /* Pods_Showcase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1CEF05A254C6E8C9FF66A85 /* Pods_Showcase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C1A88DE22128BBB00ECB268 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostCell.swift; path = "../../../../iOS/Zemoga/Z-test/Z-test/PostCell.swift"; sourceTree = "<group>"; };
 		0C2416E02071B0C6009AE18C /* Z-test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Z-test.xcdatamodel"; sourceTree = "<group>"; };
 		0C2416E32071E0BE009AE18C /* PersistanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceHelper.swift; sourceTree = "<group>"; };
 		0C5695BC20F6C17800529990 /* PostsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsService.swift; sourceTree = "<group>"; };
@@ -44,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E1A0795BC8D07D18494D5D5 /* Pods_Showcase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +90,7 @@
 				0CCCBFD7200C67C400142708 /* AppDelegate.swift */,
 				0CCCBFD9200C67C400142708 /* ViewController.swift */,
 				0CCCBFDB200C67C400142708 /* Main.storyboard */,
+				0C1A88DE22128BBB00ECB268 /* PostCell.swift */,
 				0C9A1E9C201E54DF003AE934 /* DetailViewController.swift */,
 				0CCCBFDE200C67C400142708 /* Assets.xcassets */,
 				0CCCBFE0200C67C400142708 /* LaunchScreen.storyboard */,
@@ -124,7 +129,6 @@
 				0CCCBFD1200C67C400142708 /* Frameworks */,
 				0CCCBFD2200C67C400142708 /* Resources */,
 				144E142E1D56C4C62C44A8D9 /* [CP] Embed Pods Frameworks */,
-				9EE94AFDBB5AF3A59FE2B77C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -142,7 +146,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = acvc;
 				TargetAttributes = {
 					0CCCBFD3200C67C400142708 = {
@@ -192,9 +196,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Showcase/Pods-Showcase-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -207,28 +216,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Showcase-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		9EE94AFDBB5AF3A59FE2B77C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Showcase/Pods-Showcase-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -245,6 +242,7 @@
 				0CE073B920F6D0B300823EE5 /* NetworkUtilities.swift in Sources */,
 				0C2416E12071B0C6009AE18C /* Z-test.xcdatamodeld in Sources */,
 				0CCCBFD8200C67C400142708 /* AppDelegate.swift in Sources */,
+				0C1A88DF22128BBB00ECB268 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +282,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -291,6 +290,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -342,6 +342,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -349,6 +350,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -392,7 +394,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -409,7 +411,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

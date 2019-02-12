@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SideMenu
 
 class DetailViewController: UIViewController {
 
@@ -18,6 +19,14 @@ class DetailViewController: UIViewController {
         detailLabel.text = receivedBody
         detailLabel.sizeToFit() //This makes text in the label to align top left
         
+        SideMenuManager.default.menuFadeStatusBar = false
+        SideMenuManager.default.menuPresentingViewControllerUserInteractionEnabled = true
+        let menuRightNavigationController = storyboard!.instantiateViewController(withIdentifier: "SideMenuNavC") as! UISideMenuNavigationController
+        
+        SideMenuManager.default.menuRightNavigationController = menuRightNavigationController
+        
+        SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
+        SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
         
     }
 

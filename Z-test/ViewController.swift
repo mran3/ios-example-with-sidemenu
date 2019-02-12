@@ -8,7 +8,6 @@
 
 import UIKit
 import SwiftyJSON
-import SideMenu
 
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -23,8 +22,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        SideMenuManager.default.menuFadeStatusBar = false
-        SideMenuManager.default.menuPresentingViewControllerUserInteractionEnabled = true
+        
         
         let postsService = PostsService()
         postsService.getPosts() {(data) in
@@ -55,12 +53,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return self.arTitles.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {        
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath)
+//        cell.textLabel?.text = arTitles[indexPath.row]
+//
+//        return cell
+//    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath)
-        cell.textLabel?.text = arTitles[indexPath.row]
+            as! PostCell
+        
+        cell.cellTitle?.text = arTitles[indexPath.row]
+        
+//        let headline = headlines[indexPath.row]
+//        cell.headlineTitleLabel?.text = headline.title
+//        cell.headlineTextLabel?.text = headline.text
+//        cell.headlineImageView?.image = UIImage(named: headline.image)
         
         return cell
     }
+
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true

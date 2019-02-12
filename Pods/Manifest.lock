@@ -6,10 +6,15 @@ DEPENDENCIES:
   - SideMenu
   - SwiftyJSON
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SideMenu
+    - SwiftyJSON
+
 SPEC CHECKSUMS:
   SideMenu: 99021e70b3f2eee65b5dd88e4274d09031b1221e
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
 PODFILE CHECKSUM: 43eecd63aa1113ab93eb305ad4c45ceb9125a8c7
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.5.3
