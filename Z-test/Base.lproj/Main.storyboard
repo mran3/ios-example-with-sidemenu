@@ -55,19 +55,17 @@
                                                         <constraint firstAttribute="width" constant="18" id="Ctl-IN-UCY"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yua-Rf-oPA">
-                                                    <rect key="frame" x="61" y="12" width="34" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yua-Rf-oPA">
+                                                    <rect key="frame" x="61" y="11" width="34" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="yua-Rf-oPA" firstAttribute="bottom" secondItem="E2g-M7-6Op" secondAttribute="bottomMargin" id="G8i-U1-OHp"/>
                                                 <constraint firstItem="Mtk-lO-c6b" firstAttribute="leading" secondItem="E2g-M7-6Op" secondAttribute="leadingMargin" constant="12" id="Hs3-Po-u9j"/>
-                                                <constraint firstItem="yua-Rf-oPA" firstAttribute="centerY" secondItem="Mtk-lO-c6b" secondAttribute="centerY" id="Jp1-s0-cbQ"/>
                                                 <constraint firstItem="Mtk-lO-c6b" firstAttribute="centerY" secondItem="E2g-M7-6Op" secondAttribute="centerY" id="PaD-DK-ibW"/>
-                                                <constraint firstItem="yua-Rf-oPA" firstAttribute="leading" secondItem="Mtk-lO-c6b" secondAttribute="trailing" constant="16" id="i4Z-c1-huh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -87,7 +85,7 @@
                             <constraint firstItem="qzg-W2-1Z8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zpK-pL-hDI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Posts" id="ajZ-g2-q89"/>
+                    <navigationItem key="navigationItem" title="Menu" id="ajZ-g2-q89"/>
                     <connections>
                         <outlet property="tableView" destination="qzg-W2-1Z8" id="w1m-Og-RJq"/>
                     </connections>
@@ -131,8 +129,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="contenedor" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Euk-NQ-5HG">
-                                <rect key="frame" x="40" y="34" width="688" height="19.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select an item from the sidebar." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Euk-NQ-5HG">
+                                <rect key="frame" x="40" y="99" width="688" height="19.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="BTw-iT-Ufe"/>
                                 </constraints>
@@ -145,10 +143,20 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Euk-NQ-5HG" secondAttribute="trailing" constant="20" id="SFs-Br-5Th"/>
                             <constraint firstItem="Euk-NQ-5HG" firstAttribute="leading" secondItem="FSm-qm-r5Y" secondAttribute="leadingMargin" constant="20" id="nBJ-WK-Emm"/>
-                            <constraint firstItem="Euk-NQ-5HG" firstAttribute="top" secondItem="gQj-af-waK" secondAttribute="bottom" constant="14" id="qkw-4N-IeA"/>
+                            <constraint firstItem="Euk-NQ-5HG" firstAttribute="top" secondItem="gQj-af-waK" secondAttribute="bottom" constant="29" id="qkw-4N-IeA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Detailed Info" id="H3i-b6-3XQ">
+                    <navigationItem key="navigationItem" title="Welcome" id="H3i-b6-3XQ">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="lg2-45-7zh">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BQZ-c0-HjZ">
+                                <rect key="frame" x="20" y="10" width="170" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Fav"/>
+                                <connections>
+                                    <action selector="addFav:" destination="DYi-k5-XIG" eventType="touchUpInside" id="i32-ec-AMS"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Menu" id="jG9-CI-QfJ">
                             <connections>
                                 <segue destination="kRk-dz-3Bp" kind="presentation" id="wZ2-c4-DPM"/>
@@ -168,6 +176,7 @@
         <image name="circle" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="wZ2-c4-DPM"/>
         <segue reference="dqH-qw-ikF"/>
     </inferredMetricsTieBreakers>
 </document>

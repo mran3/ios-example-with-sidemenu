@@ -46,6 +46,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print("voy pa ya")
         let destination = segue.destination as? DetailViewController
         destination?.receivedBody = arBodies[(tableView.indexPathForSelectedRow?.row)!]
+        
+        destination?.selectedIndex = tableView.indexPathForSelectedRow?.row
     }
 
     
@@ -65,6 +67,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             as! PostCell
         
         cell.cellTitle?.text = arTitles[indexPath.row]
+        if (indexPath.row > 19) {
+            cell.cellDot.image = nil
+        } else {
+            cell.cellDot.image = UIImage(named: "circle")
+        }
         
 //        let headline = headlines[indexPath.row]
 //        cell.headlineTitleLabel?.text = headline.title
